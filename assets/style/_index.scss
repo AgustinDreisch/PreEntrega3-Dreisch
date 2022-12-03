@@ -1,54 +1,26 @@
 @import '_var';
-
 /*index*/
-.banner{
-    height: 300px;
-    background: {
-        image: url(../img/index-tierra.jpg);
-        repeat: no-repeat;
-        size:cover;
-        position:center;
-    };
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    &-ppal-txt{
-        background-color: $color_bg_banner;
-        text-align: center;
-        margin: 5%;
-        h1{
-            font-size: 30px;
-            color: $color_white;
-        }
-        p{
-            font-size: 15px;
-            color: $color_white;
-        }
-    }
-    
-}
-@media (min-width: map-get($_breakpoints, md)){
-    .banner{
-        height: 400px;
-        &-ppal-txt{
+.banner, .index{
+    &-ppal{
+        @include banner-set($banner-size);
+        align-items: flex-end;
+        background-image: url(../img/index-tierra.jpg);
+        &-txt{
+            background-color: $color_bg_banner;
+            text-align: center;
+            margin: 5%;
             h1{
-                font-size: 40px;
+                font-size: 30px;
+                color: $color_white;
             }
-        } 
-    }
-    
-}
-@media (min-width: map-get($_breakpoints, lg)){
-    .banner{
-        height: 600px;
-        &-ppal-txt{
-            h1{
-                font-size: 50px;
+            p{
+                font-size: 15px;
+                color: $color_white;
             }
         }
-    }
-    
+    }  
 }
+@include banner-responsive;
 
 /* index - noticias de la semana   */
 .article-week h2{
@@ -77,6 +49,9 @@
             font-size: 15px;
         }
     }
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
 }
 .link-btn{
     text-decoration: none;
@@ -95,7 +70,7 @@
     margin: 0;
 }
 
-@media (min-width: map-get($_breakpoints, md)){
+@media (min-width: map-get($_breakpoints, sm)) and (max-width: map-get($_breakpoints, md)){
     .card-small p{
         display: none;
     }
@@ -106,7 +81,7 @@
     }
     .card-txt-container{
         h5{
-            font-size: 15px;
+            font-size: 30px;
         }
     }
 }
@@ -121,9 +96,13 @@
         width: 82.9%;
     }
  }
-@media (min-width: map-get($_breakpoints, lg)){
+@media (min-width: map-get($_breakpoints, md)){
     .card-small{
         margin: 5px auto;
+    }
+    .card-big{
+        height: 80%;
+        margin: 10% 0;
     }
 }
 /*index-formulario*/

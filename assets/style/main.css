@@ -83,32 +83,32 @@
   }
 }
 /*index*/
-.banner {
+.banner-ppal, .index-ppal {
   height: 300px;
-  background-image: url(../img/index-tierra.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
+  align-items: flex-end;
+  background-image: url(../img/index-tierra.jpg);
 }
-.banner-ppal-txt {
+.banner-ppal-txt, .index-ppal-txt {
   background-color: rgba(60, 51, 51, 0.2901960784);
   text-align: center;
   margin: 5%;
 }
-.banner-ppal-txt h1 {
+.banner-ppal-txt h1, .index-ppal-txt h1 {
   font-size: 30px;
   color: #ffffff;
 }
-.banner-ppal-txt p {
+.banner-ppal-txt p, .index-ppal-txt p {
   font-size: 15px;
   color: #ffffff;
 }
 
 @media (min-width: 768px) {
-  .banner {
+  .banner-ppal {
     height: 400px;
   }
   .banner-ppal-txt h1 {
@@ -116,14 +116,14 @@
   }
 }
 @media (min-width: 992px) {
-  .banner {
+  .banner-ppal {
     height: 600px;
   }
   .banner-ppal-txt h1 {
     font-size: 50px;
   }
 }
-/*  noticias de la semana   */
+/* index - noticias de la semana   */
 .article-week h2 {
   text-align: center;
   margin: 2% 0;
@@ -152,6 +152,9 @@
 .card-txt-container p {
   font-size: 15px;
 }
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
 
 .link-btn {
   text-decoration: none;
@@ -172,7 +175,7 @@
   margin: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) and (max-width: 768px) {
   .card-small p {
     display: none;
   }
@@ -182,7 +185,7 @@
     display: none;
   }
   .card-txt-container h5 {
-    font-size: 15px;
+    font-size: 30px;
   }
 }
 @media (max-width: 992px) {
@@ -195,12 +198,16 @@
     width: 82.9%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .card-small {
     margin: 5px auto;
   }
+  .card-big {
+    height: 80%;
+    margin: 10% 0;
+  }
 }
-/*formulario*/
+/*index-formulario*/
 .formulario {
   margin-top: 30px;
 }
@@ -256,12 +263,10 @@
 }
 
 /*noticias*/
-/*noticias-articulos*/
-article h2 {
+.article h2 {
   font-size: 40px;
   margin: 30px 0 30px 15%;
 }
-
 .article-item {
   margin-left: 15%;
   width: 70%;
@@ -273,7 +278,6 @@ article h2 {
   border-radius: 30px;
   overflow: hidden;
 }
-
 .article-img-container {
   width: 240px;
   height: 240px;
@@ -281,41 +285,14 @@ article h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.articulo1 {
-  background-image: url(../img/index-tierra.jpg);
-}
-
-.articulo2 {
-  background-image: url(../img/placeholder.png);
-}
-
-.articulo3 {
-  background-image: url(../img/astronauta.jpg);
-}
-
-.articulo4 {
-  background-image: url(../img/sound-speedOfSound.jpg);
-}
-
-.articulo5 {
-  background-image: url(../img/index-artemis.jpg);
-}
-
-.articulo6 {
-  background-image: url(../img/birdman.jpg);
-}
-
 .article-txt-container {
   width: 70%;
   margin-left: 5%;
 }
-
 .article-txt-container h3 {
   margin-bottom: 10px;
   font-size: 30px;
 }
-
 .article-button {
   border: solid 2px #0291FF;
   border-radius: 30px;
@@ -323,13 +300,32 @@ article h2 {
   padding: 10px;
   color: #ffffff;
 }
-
 .article-button a {
   text-decoration: none;
   color: #fff;
 }
 
-@media (max-width: 1024px) {
+.articulo-1 {
+  background-image: url(../img/index-tierra.jpg);
+}
+
+.articulo-2 {
+  background-image: url(../img/sound-speedOfSound.jpg);
+}
+
+.articulo-3 {
+  background-image: url(../img/index-artemis.jpg);
+}
+
+.articulo-4 {
+  background-image: url(../img/birdman.jpg);
+}
+
+.articulo-5 {
+  background-image: url(../img/index-starlink.jpg);
+}
+
+@media (max-width: 768px) {
   .article-item {
     flex-direction: column;
     align-items: center;
@@ -337,10 +333,134 @@ article h2 {
   .article-img-container {
     width: 100%;
   }
-  .article-img-container img {
-    width: 100%;
+  .article-button {
+    margin-bottom: 10px;
   }
-  .article-txt-container p {
+}
+/*      articulo    */
+.article-titulo {
+  text-align: center;
+  margin: 60px 0;
+}
+.article-titulo h1 {
+  font-size: 60px;
+}
+.article-noticia h2 {
+  text-align: center;
+  font-size: 40px;
+}
+.article-noticia h3 {
+  font-size: 30px;
+  margin-left: 15%;
+  margin-bottom: 30px;
+}
+.article-txt-img-container {
+  margin: 30px 10%;
+  display: flex;
+  align-items: center;
+}
+.article-txt-img-container img {
+  border-radius: 30px;
+  width: 300px;
+}
+.article-txt-img-container p {
+  margin: 40px;
+}
+.article-video {
+  width: 80%;
+  max-width: 560px;
+  height: 356px;
+  margin: 10px auto;
+}
+
+@media (max-width: 768px) {
+  .article-txt-img-container {
+    flex-direction: column;
+  }
+}
+.nosotros-ppal {
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/nosotros-p51-2.jpg);
+}
+.nosotros-ppal-txt {
+  background-color: rgba(60, 51, 51, 0.2901960784);
+  text-align: center;
+  margin: 5%;
+}
+.nosotros-ppal-txt h1 {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+/*  _shop   */
+.shop-ppal {
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/shop-banner.jpg);
+}
+.shop-ppal-txt {
+  background-color: rgba(60, 51, 51, 0.2901960784);
+  text-align: center;
+  margin: 5%;
+}
+.shop-ppal-txt h1 {
+  font-size: 30px;
+  color: #ffffff;
+}
+.shop-items-container {
+  margin: 20px auto;
+}
+.shop-ofertas h2 {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .banner-ppal {
+    height: 400px;
+  }
+  .banner-ppal-txt h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 992px) {
+  .banner-ppal {
+    height: 600px;
+  }
+  .banner-ppal-txt h1 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 992px) {
+  .mobile-disable-ofertas {
     display: none;
   }
+}
+.card-container {
+  text-decoration: none;
+  color: #000000;
+}
+.card-shop {
+  text-align: center;
+}
+.card-body h5 {
+  font-size: 25px;
+}
+.card-body h6, .card-body p {
+  font-size: 20px;
+}
+
+.oferta {
+  text-decoration: line-through;
+  color: #ff0000;
 }/*# sourceMappingURL=main.css.map */
