@@ -159,6 +159,10 @@
   text-decoration: none;
   color: #000000;
 }
+.card-body {
+  text-decoration: none;
+  color: #000000;
+}
 
 .link-btn {
   text-decoration: none;
